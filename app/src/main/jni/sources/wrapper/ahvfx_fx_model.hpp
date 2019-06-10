@@ -9,6 +9,7 @@
 #ifndef ahvfx_fxmodel_hpp
 #define ahvfx_fxmodel_hpp
 
+#include <iostream>
 #include <string>
 
 namespace ahvfx {

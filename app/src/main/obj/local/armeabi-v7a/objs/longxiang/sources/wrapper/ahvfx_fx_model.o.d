@@ -1,8 +1,8 @@
-/qichezhijia/meishe/NvStreamingSdk_Android_2.4.1.10_20181207_154143/samples/android/LxProject/app/src/main/obj/local/armeabi-v7a/objs/longxiang/sources/wrapper/ahvfx_fx_model.o: \
-  /qichezhijia/meishe/NvStreamingSdk_Android_2.4.1.10_20181207_154143/samples/android/LxProject/app/src/main/jni/sources/wrapper/ahvfx_fx_model.cpp \
+/Users/longxiang/longxiangproject/app/src/main/obj/local/armeabi-v7a/objs/longxiang/sources/wrapper/ahvfx_fx_model.o: \
+  /Users/longxiang/longxiangproject/app/src/main/jni/sources/wrapper/ahvfx_fx_model.cpp \
   sources/wrapper/ahvfx_fx_model.hpp \
-  /Users/wlz/tools/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/include/string
+  /Users/longxiang/tools/android-ndk-r10e/sources/cxx-stl/gnu-libstdc++/4.8/include/iostream
 
 sources/wrapper/ahvfx_fx_model.hpp:
 
-/Users/wlz/tools/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/include/string:
+/Users/longxiang/tools/android-ndk-r10e/sources/cxx-stl/gnu-libstdc++/4.8/include/iostream:

@@ -12,4 +12,5 @@
 //static const char *jniVideoEditClass="com/example/lvedit/jnicall/FFedit";
 static const char *jniVideoEditClass="com/example/lxproject/NativeInterface";
 
+
 #endif //ANDROID_PROJECT_JNIINTERFACE_H

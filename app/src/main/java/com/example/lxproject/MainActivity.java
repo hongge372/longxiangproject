@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void testjni() {
         NativeInterface nCall = new NativeInterface();
-        nCall.callSayHello();
+        nCall.use_sticker("a", "b");
     }
 
     static {

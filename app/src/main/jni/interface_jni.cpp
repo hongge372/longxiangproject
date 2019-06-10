@@ -1,14 +1,29 @@
 #include <cstdio>
 #include "log.h"
 #include "jniInterface.h"
+#include <memory>
+#include "ahvfx_applyer.hpp"
 
-static void JNICALL jniSayHello(JNIEnv *env, jobject obj){
-    LOGE("wlz here success \n");
-    __android_log_print(ANDROID_LOG_ERROR, "wlz", "wlz say hello" );
+std::shared_ptr<ahvfx::applyer> app;
+jint JNICALL native_use_sticker(JNIEnv *env, jobject obj, jstring folder, jstring name) {
+    if (app == 0) {
+        app = ahvfx::applyer::create();
+    }
+    char* c_folder = (char*) env->GetStringUTFChars(folder, 0);
+    char* c_name = (char*) env->GetStringUTFChars(name, 0);
+    ahvfx::fxmodel(c_folder, c_name);
+    //app->use(fxmodel);
+    env->ReleaseStringUTFChars(folder, c_folder);
+    env->ReleaseStringUTFChars(name, c_name);
+    return 1;
 }
 
+
+
+
 static JNINativeMethod methods[]={
-        {"sayHello", "()V", (void *)jniSayHello},
+        {"_native_use_sticker", "(Ljava/lang/String;Ljava/lang/String;)I",(void *) native_use_sticker},
+
 };
 
  static int registerNatives(JNIEnv *pEnv) {
