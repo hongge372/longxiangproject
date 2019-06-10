@@ -3,7 +3,7 @@
 #include "jniInterface.h"
 
 static void JNICALL jniSayHello(JNIEnv *env, jobject obj){
-    LOGD("wlz here success \n");
+    LOGE("wlz here success \n");
     __android_log_print(ANDROID_LOG_ERROR, "wlz", "wlz say hello" );
 }
 
