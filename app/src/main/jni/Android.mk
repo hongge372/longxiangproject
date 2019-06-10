@@ -1,0 +1,72 @@
+#chg by wanglizheng on 2018.7.17
+#build qicheffmpeg so whitch include ffmpeg fdkaac x264 static libraries. 
+
+LOCAL_PATH := $(call my-dir)
+
+APP_CFLAGS := -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -frtti
+
+include $(CLEAR_VARS)
+LOCAL_ARM_MODE := arm
+LOCAL_MODULE :=longxiang
+
+LOCAL_SRC_FILES :=interface_jni.cpp\
+			sources/common/ahvfx_encore.cpp \
+			sources/common/ahvfx_file_manager.cpp \
+			sources/common/ahvfx_graph_builder.cpp \
+			sources/common/ahvfx_obj.cpp \
+			sources/gl/ahvfx_drawable.cpp \
+			sources/gl/ahvfx_flat.cpp \
+			sources/gl/ahvfx_framebuffer.cpp \
+			sources/gl/ahvfx_gl_library.cpp \
+			sources/gl/ahvfx_graph.cpp \
+			sources/gl/ahvfx_graph_node.cpp \
+			sources/gl/ahvfx_holder_node.cpp \
+			sources/gl/ahvfx_io.cpp \
+			sources/gl/ahvfx_nv12_converter.cpp \
+			sources/gl/ahvfx_png.cpp \
+			sources/gl/ahvfx_primitive.cpp \
+			sources/gl/ahvfx_program.cpp \
+			sources/gl/ahvfx_request_node.cpp \
+			sources/gl/ahvfx_shader.cpp \
+			sources/gl/ahvfx_shape.cpp \
+			sources/gl/ahvfx_texture.cpp \
+			sources/gl/ahvfx_texture_duplicator.cpp \
+			sources/gl/ahvfx_texture_holder.cpp \
+			sources/gl/ahvfx_uniform_data.cpp \
+			sources/gl/ahvfx_vertexarray.cpp \
+			sources/gl/ahvfx_vertexbuffer.cpp \
+			sources/gl/ahvfx_video_flat.cpp \
+			sources/util/ahvfx_gl_util.c \
+			sources/util/ahvfx_global_callback.cpp \
+			sources/util/ahvfx_png_handler.cpp \
+			sources/vendor/cJson/CJsonObject.cpp \
+			sources/vendor/cJson/cJSON.c \
+			sources/vendor/png/png.c \
+			sources/vendor/png/pngerror.c \
+			sources/vendor/png/pngget.c \
+			sources/vendor/png/pngmem.c \
+			sources/vendor/png/pngpread.c \
+			sources/vendor/png/pngread.c \
+			sources/vendor/png/pngrio.c \
+			sources/vendor/png/pngrtran.c \
+			sources/vendor/png/pngrutil.c \
+			sources/vendor/png/pngset.c \
+			sources/vendor/png/pngtest.c \
+			sources/vendor/png/pngtrans.c \
+			sources/vendor/png/pngwio.c \
+			sources/vendor/png/pngwrite.c \
+			sources/vendor/png/pngwtran.c \
+			sources/vendor/png/pngwutil.c \
+			sources/wrapper/ahvfx_applyer.cpp \
+			sources/wrapper/ahvfx_callbacks.cpp \
+			sources/wrapper/ahvfx_fx_model.cpp \
+			sources/wrapper/ahvfx_interface.cpp \
+
+
+
+LOCAL_C_INCLUDES :=include sources/gl sources/common sources/plateform sources/util sources/vendor/cJson sources/vendor/png sources/wrapper
+LOCAL_CPP_FEATURES := exceptions
+LOCAL_LDLIBS := -llog -ljnigraphics -lz -landroid -lm -pthread -L$(SYSROOT)/usr/lib -latomic -landroid -lEGL -lGLESv3 -lOpenSLES
+LOCAL_CFLAGS := -D__STDC_CONSTANT_MACROS -Wno-sign-compare -Wno-switch -Wno-pointer-sign -DHAVE_NEON=1 -fPIC -DANDROI -DPICOJSON_USE_INT64 -D__STDC_FORMAT_MACROS -DGL_GLEXT_PROTOTYPES
+
+include $(BUILD_SHARED_LIBRARY)
